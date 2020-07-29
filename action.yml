@@ -1,0 +1,12 @@
+name: 'Dockerized Rust Build'
+description: 'Build a Rust Package in Xenial'
+inputs:
+  package-to-build:
+    description: 'Package to Build'
+    required: true
+    default: '*'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.package-to-build }}
